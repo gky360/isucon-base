@@ -3,10 +3,14 @@ set -eux
 
 # 各種インストール
 sudo apt update -y
-sudo apt install -y --fix-missing git vim tmux tig
+sudo apt install -y --fix-missing git tig tmux vim zsh
 
 # dotfiles
 cd && git clone https://github.com/gky360/dotfiles.git && ./dotfiles/deploy.sh
+sudo chsh -s $(which zsh) isucon
+
+# Install neovim
+./dotfiles/scripts/nvim_install.sh
 
 # deploy script
 curl -L https://raw.githubusercontent.com/gky360/isucon-base/main/deploy.sh -o ~/deploy.sh

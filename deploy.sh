@@ -21,7 +21,7 @@ $APP_BUILD_CMD
 
 # update mysqld.cnf
 if [ -e ~/etc/mysqld.cnf ]; then
-  sudo cp ~/etc/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
+  sudo cp /home/isucon/etc/mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 fi
 
 # restart services
