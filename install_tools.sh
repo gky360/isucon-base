@@ -24,6 +24,8 @@ unzip alp_linux_${ARCH}.zip
 sudo install ./alp /usr/local/bin
 rm alp_linux_${ARCH}.zip alp
 
+curl -L https://raw.githubusercontent.com/gky360/isucon-base/master/alp.yml -o ~/alp.yml
+
 # percona-toolkit
 wget percona.com/get/pt-query-digest
 sudo install ./pt-query-digest /usr/local/bin

@@ -11,6 +11,15 @@ cd && git clone https://github.com/gky360/dotfiles.git && ./dotfiles/deploy.sh
 # Install neovim
 ./dotfiles/scripts/nvim_install.sh
 
+# bash
+curl -L https://raw.githubusercontent.com/gky360/isucon-base/main/aliases.sh -o ~/aliases.sh
+echo """
+. ~/aliases.sh
+if [ -f ~/.bash_profile ]; then
+  . ~/.bash_profile
+fi
+""" >> ~/.bashrc
+
 # deploy script
 curl -L https://raw.githubusercontent.com/gky360/isucon-base/main/deploy.sh -o ~/deploy.sh
 chmod +x ~/deploy.sh
