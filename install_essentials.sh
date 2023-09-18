@@ -3,11 +3,10 @@ set -eux
 
 # 各種インストール
 sudo apt update -y
-sudo apt install -y --fix-missing git tig tmux vim zsh
+sudo apt install -y --fix-missing git tig tmux vim
 
 # dotfiles
 cd && git clone https://github.com/gky360/dotfiles.git && ./dotfiles/deploy.sh
-sudo chsh -s $(which zsh) isucon
 
 # Install neovim
 ./dotfiles/scripts/nvim_install.sh
