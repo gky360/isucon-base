@@ -23,7 +23,7 @@ sudo chmod 666 ~/etc/sysctl.conf
 sudo chown isucon:isucon ~/etc/sysctl.conf
 sudo ln -s ~/etc/sysctl.conf /etc/sysctl.conf
 
-# limits.d<
+# limits.d
 mkdir -p ~/etc/security/limits.d
 touch ~/etc/security/limits.d/isucon.conf
 sudo ln -s ~/etc/security/limits.d/isucon.conf /etc/security/limits.d/isucon.conf
