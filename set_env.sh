@@ -35,4 +35,7 @@ default_slack_token="enter Slack User OAuth Token"
 slack_token=$(prompt_for_input "Enter the value for SLACK_TOKEN" "$default_slack_token")
 echo "export SLACK_TOKEN=\"$slack_token\"" >> ~/.bash_profile
 
+# Misc
+echo "export GOPATH=\"/home/isucon/go\"" >> ~/.bash_profile
+
 echo "Environment variables updated."
