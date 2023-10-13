@@ -4,19 +4,21 @@ set -eux
 cd
 
 git diff --exit-code > /dev/null
+git checkout main
+git pull
 GIT_REVISION=$(git rev-parse --short HEAD)
 
 date -R
-./dotfiles/scripts/slack.sh isucon ":arrow_forward: \`${GIT_REVISION}\` Started deploying."
+~/dotfiles/scripts/slack.sh isucon ":arrow_forward: \`${GIT_REVISION}\` Started deploying."
 
 finally() {
   ret=$?
 
   date -R
   if [ $ret -eq 0 ]; then
-    ./dotfiles/scripts/slack.sh isucon ":white_check_mark: \`${GIT_REVISION}\` Finished deploying."
+    ~/dotfiles/scripts/slack.sh isucon ":white_check_mark: \`${GIT_REVISION}\` Finished deploying."
   else
-    ./dotfiles/scripts/slack.sh isucon ":large_red_square: \`${GIT_REVISION}\` Failed to deploy."
+    ~/dotfiles/scripts/slack.sh isucon ":large_red_square: \`${GIT_REVISION}\` Failed to deploy."
   fi
 
   exit $ret
